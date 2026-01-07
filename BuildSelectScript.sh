@@ -292,7 +292,7 @@ function utility_scripts {
 
 
 # Set default values only if they haven't been defined as environment variables
-: ${SCRIPT_BRANCH:="main"}
+: ${SCRIPT_BRANCH:="dev"}
 
 function placeholder() {
     section_divider
