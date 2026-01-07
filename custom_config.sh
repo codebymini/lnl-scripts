@@ -76,7 +76,7 @@ unset CUSTOMIZATION_DEBUG
 
 # PATCH_REPO is the repository URL from which patches will be sourced
 #   Uncomment the line and replace with your own repository URL if not using the default
-#export PATCH_REPO="https://github.com/loopandlearn/customization.git"
+#export PATCH_REPO="https://github.com/codebymini/customization.git"
 
 # LOCAL_PATCH_FOLDER is the local directory from which patches will be sourced
 #   If not set or empty, patches will be downloaded from the PATCH_REPO
