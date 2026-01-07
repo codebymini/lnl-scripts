@@ -7,6 +7,7 @@
 #   2. extra_arg (optional): An additional argument to be passed to the script.
 # If the script fails to execute, the function prints an error message and terminates
 # the entire shell script with a non-zero status code.
+# SCRIPT_REPO can be set to override the default repository (defaults to "loopandlearn")
 run_script() {
     local script_name=$1
     local extra_arg=$2
@@ -15,7 +16,8 @@ run_script() {
     echo -e "\n--------------------------------\n"
 
     if [[ ${LOCAL_SCRIPT:-0} -eq 0 ]]; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/loopandlearn/lnl-scripts/$SCRIPT_BRANCH/$script_name)" _ "$extra_arg"
+        : ${SCRIPT_REPO:="codebymini"}
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/${SCRIPT_REPO}/lnl-scripts/$SCRIPT_BRANCH/$script_name)" _ "$extra_arg"
     else
         /bin/bash -c "$(cat $script_name)" _ "$extra_arg"
     fi
