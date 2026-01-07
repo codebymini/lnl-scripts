@@ -899,7 +899,7 @@ open_source_warning
 # Welcome & Branch Selection
 ############################################################
 
-URL_THIS_SCRIPT="https://github.com/loopandlearn/LoopFollow.git"
+URL_THIS_SCRIPT="https://github.com/codebymini/LoopFollow.git"
 
 function choose_main_branch() {
     branch_select ${URL_THIS_SCRIPT} main
@@ -915,6 +915,10 @@ function choose_third() {
 
 function choose_dev_branch() {
     branch_select ${URL_THIS_SCRIPT} dev
+}
+
+function choose_remote_response_branch() {
+    branch_select ${URL_THIS_SCRIPT} remote-response
 }
 
 if [ -z "$CUSTOM_BRANCH" ]; then
@@ -942,8 +946,8 @@ if [ -z "$CUSTOM_BRANCH" ]; then
     return_when_ready
     section_divider
 
-    options=("main branch" "Second LoopFollow app" "Third LoopFollow app" "dev branch" "$(exit_or_return_menu)")
-    actions=("choose_main_branch" "choose_second" "choose_third" "choose_dev_branch" "exit_script")
+    options=("main branch" "Second LoopFollow app" "Third LoopFollow app" "dev branch" "remote-response branch" "$(exit_or_return_menu)")
+    actions=("choose_main_branch" "choose_second" "choose_third" "choose_dev_branch" "choose_remote_response_branch" "exit_script")
     menu_select "${options[@]}" "${actions[@]}"
 else
     branch_select ${URL_THIS_SCRIPT} $CUSTOM_BRANCH
