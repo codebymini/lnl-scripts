@@ -93,6 +93,7 @@ add_customization "Negative Insulin Damper" "negative_insulin" "message_for_nega
 add_customization "Increase Remote Window to 15 minutes" "remote_window" "message_for_remote_window"
 
 add_translation "2002" "profiles"
+add_customization "Add remote response for Loop Follow" "remote_response"
 
 param_zero_is_customization
 param_zero_result=$?
